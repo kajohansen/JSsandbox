@@ -1,8 +1,9 @@
-var globalStepArray = new Array();
-var angle = 0;
+var globalStepResponse;
 
 function drawSteps(e) {
 
+	globalStepResponse = e.data;
+	
 	context.save();
 	blank();
 		
@@ -26,9 +27,9 @@ function onError(e) {
 	console.log("Error : [" + e.filename + ", line " + e.lineno + "] " + e.message);
 }
 
-var myWorker = new Worker("lineWorker.js");
-myWorker.onmessage = drawSteps;
-myWorker.onerror = onError;
-myWorker.postMessage("init");
+var lineWorker = new Worker("lineWorker.js");
+lineWorker.onmessage = drawSteps;
+lineWorker.onerror = onError;
+lineWorker.postMessage("init");
 
 

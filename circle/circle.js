@@ -48,7 +48,7 @@ function anim() {
 	draw();
 } // end anim
 
-function init() {
+function inita() {
 	canvas = document.getElementById("canvas1");
 	context = canvas.getContext('2d');
 	canvas.width = canvas.offsetWidth;
@@ -64,16 +64,10 @@ function init() {
 	bufferCanvasCtx.canvas.height = canvas.offsetHeight;
 	
 	// initialize the rects
-/* 	flakeTimer = setInterval(addFlake, 10); */
+	flakeTimer = setInterval(addFlake, 10);
 	
-/* 	draw(); */
+	draw();
 	
-/* 	animTimer = window.setInterval(anim, 10); */
+	animTimer = window.setInterval(anim, 10);
 }
-init();
-
-document.getElementsByTagName("body")[0].onclick = function() {
-	console.log("Terminating");
-	window.clearInterval(animTimer);
-	myWorker.terminate();
-}
+/* inita(); */

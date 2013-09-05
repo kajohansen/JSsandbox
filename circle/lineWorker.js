@@ -11,9 +11,9 @@ function get_random_color() {
 function setSteps(endX, endY, startX, startY) {
 	var stepArray = new Array();
 	
-	for (i = 1; i <= 10; i++) {
-		var stepDX = (((endX - startX) / 10) * i) + 300;
-		var stepDY = (((endY - startY) / 10) * i) + 300;
+	for (i = 1; i <= 20; i++) {
+		var stepDX = (((endX - startX) / 20) * i) + 300;
+		var stepDY = (((endY - startY) / 20) * i) + 300;
 		
 		var step = [stepDX, stepDY];
 		stepArray.push(step);
@@ -30,7 +30,7 @@ var line = {
 function drawLines() {
 	var localStepArray = new Array();
 
-	for (var i = 0; i < 45; i++) {
+	for (var i = 0; i < 6; i++) {
 		var my = line;
 		my.color = get_random_color();
 		my.endX = 300 + 250 * Math.cos(i);
